@@ -2,13 +2,14 @@
 
 #include "esphome/core/component.h"
 #include "esphome/components/sensor/sensor.h"
+#include "esphome/components/uart/uart.h"
 
 namespace esphome {
 namespace waveshare_tof_laser_range_sensor_b {
 
-class WaveshareTOFLaserRangeSensorB : public Component, public sensor::Sensor {
+class WaveshareTOFLaserRangeSensorB : public uart::UARTDevice, public Component, public sensor::Sensor {
  public:
-  WaveshareTOFLaserRangeSensorB(int rx_pin, int tx_pin);
+  WaveshareTOFLaserRangeSensorB() = default;
 
   void setup() override;
   void loop() override;
@@ -16,8 +17,6 @@ class WaveshareTOFLaserRangeSensorB : public Component, public sensor::Sensor {
 
  protected:
   bool verify_checksum(uint8_t data[], uint8_t len);
-  int rx_pin_;
-  int tx_pin_;
 };
 
 }  // namespace waveshare_tof_laser_range_sensor_b
