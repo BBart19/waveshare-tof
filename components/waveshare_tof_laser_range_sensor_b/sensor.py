@@ -24,6 +24,7 @@ CONFIG_SCHEMA = sensor.sensor_schema(
     device_class=DEVICE_CLASS_DISTANCE,
 ).extend(uart.UART_DEVICE_SCHEMA)
 
+
 async def to_code(config):
     var = await sensor.new_sensor(config)
     await cg.register_component(var, config)
