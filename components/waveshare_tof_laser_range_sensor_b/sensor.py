@@ -12,7 +12,7 @@ from esphome.const import (
 )
 
 CODEOWNERS = ["@BBart19"]
-DEPENDENCIES = ["uart"]
+#DEPENDENCIES = ["uart"]
 
 waveshare_ns = cg.esphome_ns.namespace("waveshare_tof_laser_range_sensor_b")
 WaveshareTOFLaserRangeSensorB = waveshare_ns.class_(
