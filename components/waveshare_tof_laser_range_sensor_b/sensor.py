@@ -1,11 +1,9 @@
 import esphome.codegen as cg
+import esphome.config_validation as cv
 from esphome.components import sensor, uart
-from esphome.const import (
-    STATE_CLASS_MEASUREMENT,
-    ICON_ARROW_EXPAND_VERTICAL,
-    DEVICE_CLASS_DISTANCE,
-    UNIT_MILLIMETER,
-)
+from esphome import automation
+from esphome.const import *
+
 
 CODEOWNERS = ["@BBart19"]
 DEPENDENCIES = ["uart"]
